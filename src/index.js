@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 
 const Statistics=({good,neutral,bad})=>{ 
+                            if(good===0 && neutral===0 && bad===0){
+                              return(<p>No Feedback Given</p>)
+                            }
                            return(<><p>Good {good}</p>
                             <p>neutral {neutral}</p>
                             <p>Good {bad}</p>
@@ -27,6 +30,7 @@ const App = () => {
       <button onClick={handleGoodbutton}>Good</button>
       <button onClick={handleNeutralbutton}>Neutral</button>
       <button onClick={handleBadbutton}> Bad</button>
+      <h2>Statistics</h2>
       <Statistics good={good} neutral={neutral} bad={bad} />
       
     </div>
