@@ -1,16 +1,22 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 
-const Statistics=({good,neutral,bad})=>{ 
-                            if(good===0 && neutral===0 && bad===0){
-                              return(<p>No Feedback Given</p>)
-                            }
-                           return(<><p>Good {good}</p>
-                            <p>neutral {neutral}</p>
-                            <p>Good {bad}</p>
-                            <p>All {good+neutral+bad}</p>
-                            <p>Average  {(good-bad)/(good+neutral+bad)}</p>
-                            <p>Positive  {(good/(good+neutral+bad))*100}%</p></>)}
+const Button=(props)=> <button onClick={props.onClick}>{props.text}</button>
+         
+
+
+const Statistic=(props)=>{  if(isNaN(props.value)){
+                                  return(<tr><td>{props.text} :</td></tr>)
+                                    }
+                         return(
+                                <tr>
+                                <td>{props.text}</td>
+                                <td> {props.value}</td>
+                                </tr>
+                               )
+                              }
+                                          
+                          
 
 const App = () => {
   
@@ -27,11 +33,18 @@ const App = () => {
   return (
     <div>
       <h1>Give feedback</h1>
-      <button onClick={handleGoodbutton}>Good</button>
-      <button onClick={handleNeutralbutton}>Neutral</button>
-      <button onClick={handleBadbutton}> Bad</button>
+      <Button  text="good"     onClick={handleGoodbutton} />
+      <Button text ="neutral"  onClick={handleNeutralbutton} />
+      <Button  text ="bad"     onClick={handleBadbutton} />
       <h2>Statistics</h2>
-      <Statistics good={good} neutral={neutral} bad={bad} />
+      <table><tbody>
+      <Statistic text="good" value={good} />
+      <Statistic text="neutral" value={neutral} />
+      <Statistic text="bad" value={bad} />
+      <Statistic text="All"  value={good+neutral+bad} />
+      <Statistic text="Average" value={(good-bad)/(good+neutral+bad)} />
+      <Statistic text="Positive" value={(good/(good+neutral+bad))*100} />
+      </tbody></table>
       
     </div>
   )
