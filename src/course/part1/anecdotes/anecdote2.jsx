@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 const App = (props) => {
   const [selected, setSelected] = useState(0)
   const [votes, setVotes]=useState(new Array(props.anecdotes.length).fill(0))
-  console.log(votes)
+ 
   
 
   const handleAnecdote=()=>{  
