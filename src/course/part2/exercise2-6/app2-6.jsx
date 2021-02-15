@@ -12,7 +12,7 @@ const App = () => {
                 event.preventDefault()
                
                 if( persons.some((el)=>el.name.toLowerCase()===newName.trim().toLowerCase()) ) {
-                    alert(`${newName} is already in the list`)
+                    alert(`${newName} is already added to phonebook`)
                 } 
 
                else{
