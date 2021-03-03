@@ -3,6 +3,7 @@ import axios from 'axios'
 import Weather from './Weather'
 import Countryinfo from './Countryinfo'
 import Countrylist from './Countrylist'
+import Search from './Search'
 
 const App=()=>{
     
@@ -34,7 +35,7 @@ const App=()=>{
     const handleShow =(e)=>setSearch(e.target.value)
      
     return(<div>
-             find countries:<input type='text' value={searchcountry} onChange={handleSearch}/>
+            <Search  searchcountry={searchcountry} handleSearch={handleSearch}/>
             {
               ( filteredCountry.length>10 ? 
                 <p>Too many matches,specify another filter</p>:
@@ -51,4 +52,3 @@ const App=()=>{
 }
 
 export default App
-
