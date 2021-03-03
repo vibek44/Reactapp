@@ -29,6 +29,7 @@ const App = () => {
   const handleNeutralbutton=()=>setNeutral(neutral+1)
 
   const handleBadbutton=()=>setBad(bad+1)
+  
 
   return (
     <div>
