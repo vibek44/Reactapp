@@ -1,21 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-
-const Header=(props)=> <h1>{props.course} </h1>
-                                      
 
 
-const Content=(props)=> <div> <Part part={props.parts[0]} />
-                              <Part part={props.parts[1]} />
-                              <Part part={props.parts[2]} />
-                        </div>
+const Header=(props)=><h1>{props.name} </h1>
         
 const Part=(props)=><p>{props.part.name} {props.part.exercises}</p>
 
 const Total=(props)=>  <p> Total no of exercise is  {props.parts[0].exercises + 
   props.parts[1].exercises + props.parts[2].exercises }</p> 
 
+  const Content=(props)=> <div>
+                            <Part part={props.parts[0]} />
+                            <Part part={props.parts[1]} />
+                            <Part part={props.parts[2]} />
+                          </div>
+ 
 const App=()=>
               {
                 const course = {
