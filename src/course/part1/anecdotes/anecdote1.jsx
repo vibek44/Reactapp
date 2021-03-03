@@ -14,6 +14,7 @@ const App = (props) => {
     <div>
       <p>{props.anecdotes[selected]}</p>
       <button  onClick={handleAnecdote}>Next anecdote</button>
+      
     </div>
   )
 }
